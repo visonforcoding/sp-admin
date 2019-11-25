@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html th:fragment="layout (title,content,script,links,js)" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title th:replace="${title}">Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- zui -->
+    <link href="/static/zui/css/zui.min.css" rel="stylesheet">
+    <link href="/static/zui/lib/datetimepicker/datetimepicker.min.css" rel="stylesheet">
+    <link href="/static/css/base.css" rel="stylesheet">
+    <!--/* Per-page placeholder for additional links */-->
+    <style>
+        body {
+            line-height: 1.42857;
+            color: #404040;
+            background-color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            -webkit-font-feature-settings: "tnum";
+            font-feature-settings: "tnum";
+            font-variant: tabular-nums;
+        }
+    </style>
+    {% block css %}
+    {% endblock %}
+</head>
+
+<body>
+    <div id="page-content">
+        {% block content %}
+        Default content goes here.
+        {% endblock %}
+    </div>
+
+    <!-- 在此处挥洒你的创意 -->
+    <!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
+    <script src="/static/js/jquery.js"></script>
+    <!-- ZUI Javascript组件 -->
+    <script src="/static/zui/js/zui.min.js"></script>
+    <script src="/static/zui/lib/datetimepicker/datetimepicker.min.js"></script>
+    <script src="/static/lib/layer/layer.js"></script>
+    {% block script %}
+    {% endblock %}
+</body>
+
+</html>

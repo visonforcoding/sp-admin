@@ -1,0 +1,23 @@
+{% extends "../common/base.html" %}
+{% block css %}
+<style>
+    .post-content {
+        flex-shrink: 0;
+        width: 730px;
+        margin: 20px auto auto auto;
+    }
+</style>
+{% endblock %}
+
+
+{% block content %}
+<div class="post-content">
+    <h1>{{ post.title }}</h1>
+    {% autoescape false %}
+    {{post.content}}
+    {% endautoescape %}
+    <p>
+        <span>原文: <a target="_blank" href="{{ post.source_url }}">{{ post.source_url }}</a></span>
+    </p>
+</div>
+{% endblock %}

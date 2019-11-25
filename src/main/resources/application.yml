@@ -1,0 +1,12 @@
+debug: true
+spring:
+  session:
+    store-type: redis
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    timeout: 3000
+    database: 1
+logging:
+    level:  # 日志级别
+        org.springframework.boot.autoconfigure: ERROR # 配置spring

@@ -1,0 +1,39 @@
+{% extends "../common/base.html" %}
+
+{% block content %}
+<div class="list">
+    <header>
+        <h3><i class="icon-list-ul"></i> 最新动态 <small>更新 123 条</small></h3>
+    </header>
+    <div class="items items-hover">
+        {% for post in posts %}
+        <div class="item">
+            <div class="item-heading">
+                <div class="pull-right"><span class="text-muted">2013-11-11 16:14:37</span> &nbsp; <a href="#"
+                        class="text-muted"><i class="icon-comments"></i> 243</a></div>
+                <h4><a href="/blog/{{ post.id }}">{{ post.title }}</a></h4>
+            </div>
+            <div class="item-content">
+                <div class="text">{{ post.summary }}</div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<footer>
+    <ul class="pager">
+        <li class="previous"><a href="#">« 上一页</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">⋯</a></li>
+        <li><a href="#">6</a></li>
+        <li class="active"><a href="#">7</a></li>
+        <li><a href="#">8</a></li>
+        <li><a href="#">9</a></li>
+        <li><a href="#">⋯</a></li>
+        <li><a href="#">12</a></li>
+        <li class="next"><a href="#">下一页 »</a></li>
+    </ul>
+</footer>
+</div>
+更紧凑的列表
+{% endblock %}

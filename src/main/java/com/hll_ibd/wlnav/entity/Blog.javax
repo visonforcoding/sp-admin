@@ -1,0 +1,87 @@
+package com.vison.blog.entity;
+
+public class Blog{
+
+    private Integer id;
+    private String title;
+    private String source_url;
+    private String content;
+    private String content_md;
+    private String hash_key;
+    private String create_time;
+    private String modify_time;
+    private String summary;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getSource_url() {
+        return source_url;
+    }
+
+    public void setSource_url(String source_url) {
+        this.source_url = source_url;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public String getContent_md() {
+        return content_md;
+    }
+
+    public void setContent_md(String content_md) {
+        this.content_md = content_md;
+    }
+
+    public String getHash_key() {
+        return hash_key;
+    }
+
+    public void setHash_key(String hash_key) {
+        this.hash_key = hash_key;
+    }
+
+    public String getCreate_time() {
+        return create_time;
+    }
+
+    public void setCreate_time(String create_time) {
+        this.create_time = create_time;
+    }
+
+    public String getModify_time() {
+        return modify_time;
+    }
+
+    public void setModify_time(String modify_time) {
+        this.modify_time = modify_time;
+    }
+
+    public String getSummary() {
+        return summary;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
+    }
+
+}

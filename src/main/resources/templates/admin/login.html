@@ -1,0 +1,84 @@
+{% extends "../common/base.html" %}
+
+{% block content %}
+<style type="text/css">
+    #line-chart {
+        height: 300px;
+        width: 800px;
+        margin: 0px auto;
+        margin-top: 1em;
+    }
+
+    .navbar-default .navbar-brand,
+    .navbar-default .navbar-brand:hover {
+        color: #fff;
+    }
+
+    .login-box {
+        width: 400px;
+    }
+</style>
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <a class="" href="index.html"><span class="navbar-brand"><span class="fa fa-paper-plane"></span>麦穗</span></a>
+    </div>
+
+    <div class="navbar-collapse collapse" style="height: 1px;">
+
+    </div>
+</div>
+</div>
+<div class="login-box center-block">
+    <div class="panel panel-default">
+        <p class="panel-heading no-collapse">后台登录</p>
+        <div class="panel-body">
+            <form action="" method="post">
+                <input type="hidden" name="_csrf_token" value="" />
+                <div class="form-group">
+                    <label for="username">用户名</label>
+                    <input type="text" id="username" class="form-control span12" name="username" value=""
+                        required="required" />
+                </div>
+                <div class="form-group">
+                    <label for="password">密码</label>
+                    <input type="password" id="password" class="form-control span12 form-control" name="password"
+                        required="required" />
+                </div>
+                <button id="login_btn" type="button" class="btn btn-primary pull-right">登录</button>
+                <label class="_remember_me"><input type="checkbox" name="_remember_me" value="on">记住我</label>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+    </div>
+    <p class="pull-right" style=""><a href="http://blog.rc5j.cn" target="blank"
+            style="font-size: .75em; margin-top: .25em;">联系管理员</a></p>
+    <p><a href="reset-password.html">忘记密码?</a></p>
+</div>
+{% endblock %}
+{% block script %}
+<script>
+    $(function () {
+        $('#login_btn').on('click', function () {
+            var username = $('input[name="username"]').val();
+            var password = $('input[name="password"]').val();
+            $.ajax({
+                "url": '/admin/login',
+                "type": "post",
+                "data": { 'name': username, 'password': password },
+                "dataType": "json",
+                "success": function (res) {
+                    if (res.ret === 0) {
+                        var load = layer.load();
+                        setTimeout(function () {
+                            location.href = res.data.redirect;
+                        }, 800);
+                    } else {
+                        layer.msg(res.msg);
+                    }
+
+                }
+            })
+        });
+    });
+</script>
+{% endblock %}
